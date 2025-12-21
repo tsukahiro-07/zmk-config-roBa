@@ -112,7 +112,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 JP_HANZEN  &lt 1 SPACE  &lt 3 DOWN_ARROW      &kp BACKSPACE        &lt 1 ENTER                             &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp UP_ARROW DOWN_ARROW>;
+            sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
         };
 
         NUM {
