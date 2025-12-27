@@ -70,14 +70,11 @@
         21 // Ctrl
         33 // Shift
     >;
+    require-prior-idle-ms = <200>;
 };
 
 &mkp_input_listener {
     input-processors = <&zip_temp_layer 4 250>;
-};
-
-&zip_temp_layer {
-    require-prior-idle-ms = <200>;
 };
 
 / {
@@ -88,4 +85,3 @@
         input-processors = <&zip_temp_layer 4 10000>;
     };
 };
-
