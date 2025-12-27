@@ -65,10 +65,6 @@
     require-prior-idle-ms = <200>;
 };
 
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer 4 250>;
-};
-
 / {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
