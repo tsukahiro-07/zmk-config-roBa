@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
 #define JP_QUOTE        AMPERSAND         // '
@@ -94,16 +95,17 @@
         };
 
         // 追加: ズーム制御用マクロ。Layer 5とCtrl。離した時に強制的に Layer 0 に戻る設定を追加。
+
         sc: scroll_control {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&mo 5 &kp LCTRL>, // Layer 5 と Ctrl を押す
+                <&mo 5 &kp LCTRL>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp LCTRL &mo 5>,         // Ctrl と Layer 5 を離す
-                <&to 0>;                   // 手を離した瞬間に確実に Layer 0 へ
+                <&kp LCTRL &mo 5 &to 0>;
+                   // 手を離した瞬間に確実に Layer 0 へ
             label = "Scroll Ctrl";
         };
     };
@@ -119,11 +121,13 @@
         };
 
         // 追加: ホールドでズームマクロ、タップで通常キー
+
         zp: zoom_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "Zoom / Tap";
             #binding-cells = <2>;
             bindings = <&sc>, <&kp>;
+
             tapping-term-ms = <200>;
             flavor = "balanced";
             hold-while-undecided;
@@ -137,7 +141,7 @@
             bindings = <
 &zp 0 Q           &kp W         &kp E         &kp R            &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F            &kp G        &kp ESCAPE            &kp LEFT_ARROW   &kp H        &kp J  &kp K      &kp L    &mt RIGHT_CONTROL MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &lt 6 JP_COLON          &kp RIGHT_ARROW  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &lt 6 JP_COLON        &kp RIGHT_ARROW  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 JP_HANZEN  &lt 1 SPACE  &lt 3 DOWN_ARROW      &kp BACKSPACE    &lt 1 ENTER                             &kp DEL
             >;
 
@@ -151,7 +155,6 @@
 &kp COMMA        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL  &trans                       &trans             &kp JP_TILDE     &kp JP_CARET      &kp JP_AT     &kp JP_LBRACKET  &kp JP_RBRACKET
 &trans           &kp NUMBER_0  &kp PERIOD    &trans        &trans        &trans                       &trans             &trans                                                            &kp PIPE
             >;
-
         };
 
         FUNCTION {
@@ -176,19 +179,19 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB4  &kp LC(C)  &mkp MB5  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans     &mkp MB2  &kp RIGHT_CONTROL
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans     &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                 &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &kp RIGHT_CONTROL
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
         };
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB4  &kp LC(C)  &mkp MB5  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans     &mkp MB2  &kp RCTRL
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans     &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                 &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &kp RCTRL
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
         };
 
