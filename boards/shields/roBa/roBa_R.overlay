@@ -8,6 +8,7 @@
         20 // L
         21 // ; 
         33 // Shift
+        45 // ctrl
     >;
     require-prior-idle-ms = <200>;
 };
