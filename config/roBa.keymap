@@ -105,7 +105,9 @@
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&kp LCTRL &mo 5 &to 0>;
-                   // 手を離した瞬間に確実に Layer 0 へ
+
+            // 手を離した瞬間に確実に Layer 0 へ
+
             label = "Scroll Ctrl";
         };
     };
@@ -180,7 +182,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &kp RIGHT_CONTROL
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
@@ -189,7 +191,7 @@
         SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &kp RCTRL
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
