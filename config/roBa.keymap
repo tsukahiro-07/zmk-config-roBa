@@ -93,13 +93,13 @@
             label = "TO_LAYER_0";
         };
 
-        // 追加: ズーム制御用マクロ
+        // 追加: ズーム制御用マクロ。Layer 5とCtrl
         sc: scroll_control {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&mo 4 &kp LCTRL>,
+                <&mo 5 &kp LCTRL>, // Layer 5 と Ctrl を押す
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&kp LCTRL &mo 4>;
