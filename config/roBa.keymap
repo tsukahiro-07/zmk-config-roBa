@@ -93,7 +93,7 @@
             label = "TO_LAYER_0";
         };
 
-        // 追加: ズーム制御用マクロ。Layer 5とCtrl
+        // 追加: ズーム制御用マクロ。Layer 5とCtrl。離した時に強制的に Layer 0 に戻る設定を追加。
         sc: scroll_control {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -102,7 +102,8 @@
                 <&mo 5 &kp LCTRL>, // Layer 5 と Ctrl を押す
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp LCTRL &mo 4>;
+                <&kp LCTRL &mo 5>,         // Ctrl と Layer 5 を離す
+                <&to 0>;                   // 手を離した瞬間に確実に Layer 0 へ
             label = "Scroll Ctrl";
         };
     };
