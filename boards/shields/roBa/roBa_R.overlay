@@ -6,11 +6,10 @@
     excluded-positions = <
         18 // J
         20 // L
-        21 // ; 
         33 // Shift
         45 // ctrl
     >;
-    require-prior-idle-ms = <200>;
+    require-prior-idle-ms = <400>;
 };
 
 /* 2. 入力リスナーの設定（ここを集約） */
