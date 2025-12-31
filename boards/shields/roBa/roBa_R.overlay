@@ -20,9 +20,8 @@
         device = <&trackball>;
         status = "okay";
 
-        /* デフォルト：感度調整のみ残し、 <&zip_temp_layer 4 10000>をコメントアウト */
-        input-processors = 
-            <&zip_xy_scaler 4 3>/*;
+        /* デフォルト：感度調整のみ残し、 オートマウスレイヤの<&zip_temp_layer 4 10000>を削除 */
+        input-processors = <&zip_xy_scaler 4 3>;
 
         /* スナイプモード（レイヤー1） */
         snipe {
