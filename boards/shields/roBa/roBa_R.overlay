@@ -1,14 +1,9 @@
 #include "roBa.dtsi"
 #include <input/processors.dtsi>
 
-/* 1. レイヤー自動遷移の設定：コメントアウト */
+/* 1. レイヤー自動遷移の設定：未使用のため削除またはコメントアウト維持 */
 /* &zip_temp_layer {
-    excluded-positions = <
-        18 // J
-        20 // L
-        33 // Shift
-        45 // ctrl
-    >;
+    excluded-positions = <18 20 33 45>;
     require-prior-idle-ms = <400>;
 };
 */
@@ -20,7 +15,7 @@
         device = <&trackball>;
         status = "okay";
 
-        /* デフォルト：感度調整のみ残し、 オートマウスレイヤの<&zip_temp_layer 4 10000>を削除 */
+        /* オートマウス機能を削除し、感度調整(scaler)のみを定義 */
         input-processors = <&zip_xy_scaler 4 3>;
 
         /* スナイプモード（レイヤー1） */
@@ -37,7 +32,7 @@
     };
 };
 
-/* --- 以下、ハードウェア固有設定（そのまま維持） --- */
+/* --- 以下、ハードウェア固有設定（維持） --- */
 &default_transform { col-offset = <6>; };
 
 &kscan0 {
