@@ -1,8 +1,8 @@
 #include "roBa.dtsi"
 #include <input/processors.dtsi>
 
-/* 1. レイヤー自動遷移の設定 */
-&zip_temp_layer {
+/* 1. レイヤー自動遷移の設定：コメントアウト */
+/* &zip_temp_layer {
     excluded-positions = <
         18 // J
         20 // L
@@ -11,18 +11,19 @@
     >;
     require-prior-idle-ms = <400>;
 };
+*/
 
-/* 2. 入力リスナーの設定（ここを集約） */
+/* 2. 入力リスナーの設定 */
 / {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
         status = "okay";
 
-        /* デフォルト：感度調整 + 自動レイヤー4遷移 */
+        /* デフォルト：感度調整のみ残し、zip_temp_layer をコメントアウト */
         input-processors = 
-            <&zip_xy_scaler 4 3>,
-            <&zip_temp_layer 4 10000>;
+            <&zip_xy_scaler 4 3>/*, 
+            <&zip_temp_layer 4 10000> */;
 
         /* スナイプモード（レイヤー1） */
         snipe {
