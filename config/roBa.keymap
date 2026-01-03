@@ -42,6 +42,7 @@
 
 &trackball {
     //automouse-layer = <4>;　　<-- オートマウスレイヤ削除のためにコメントアウト
+
     scroll-layers = <5>;
 
     // arrows {
@@ -94,6 +95,11 @@
             bindings = <&mkp MB2>;
             key-positions = <19 20>;
         };
+
+        ctrlMB1 {
+            bindings = <&ctrl_MB1>;
+            key-positions = <21 19 18>;
+        };
     };
 
     macros {
@@ -119,6 +125,14 @@
             // 手を離した瞬間に確実に Layer 0 へ
 
             label = "Scroll Ctrl";
+        };
+
+        ctrl_MB1: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1>, <&macro_press>, <&kp RCTRL>;
+
+            label = "NEW_MACRO";
         };
     };
 
