@@ -62,18 +62,15 @@
         compatible = "zmk,combos";
 
         tab {
-            bindings = <&kp TAB>;
+            bindings = <&kp F7>;
             key-positions = <11 12>;
+            timeout-ms = <100>;
         };
 
         shift_tab {
-            bindings = <&kp LS(TAB)>;
+            bindings = <&kp F8>;
             key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
+            timeout-ms = <100>;
         };
 
         double_quotation {
@@ -89,16 +86,19 @@
         mouse1 {
             bindings = <&mkp MB1>;
             key-positions = <18 19>;
+            timeout-ms = <100>;
         };
 
         mouse2 {
             bindings = <&mkp MB2>;
             key-positions = <19 20>;
+            timeout-ms = <100>;
         };
 
         ctrlMB1 {
             bindings = <&ctrl_MB1>;
             key-positions = <21 19 18>;
+            timeout-ms = <100>;
         };
     };
 
