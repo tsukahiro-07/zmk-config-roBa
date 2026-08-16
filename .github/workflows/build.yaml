@@ -1,4 +1,3 @@
-YAML
 include:
   - board: xiao_ble
     shield: roBa_L
