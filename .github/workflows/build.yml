@@ -1,3 +1,4 @@
+YAML
 name: Build ZMK Firmware
 
 on:
@@ -8,5 +9,3 @@ on:
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      matrix: '[{"board": "xiao_ble", "shield": "roBa_L"}, {"board": "xiao_ble", "shield": "roBa_R"}, {"board": "xiao_ble", "shield": "settings_reset"}]'
