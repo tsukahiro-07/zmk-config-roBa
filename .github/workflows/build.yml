@@ -1,11 +1,6 @@
+YAML
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      build_matrix: |
-        [
-          {"board": "xiao_ble", "shield": "roBa_L"},
-          {"board": "xiao_ble", "shield": "roBa_R"}
-        ]
