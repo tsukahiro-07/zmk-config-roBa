@@ -1,5 +1,8 @@
+YAML
 include:
   - board: xiao_ble
     shield: roBa_L
   - board: xiao_ble
     shield: roBa_R
+  - board: xiao_ble
+    shield: settings_reset
