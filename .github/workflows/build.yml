@@ -9,9 +9,4 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix: |
-        [
-          {"board": "xiao_ble", "shield": "roBa_L"},
-          {"board": "xiao_ble", "shield": "roBa_R"},
-          {"board": "xiao_ble", "shield": "settings_reset"}
-        ]
+      matrix: '[{"board": "xiao_ble", "shield": "roBa_L"}, {"board": "xiao_ble", "shield": "roBa_R"}, {"board": "xiao_ble", "shield": "settings_reset"}]'
